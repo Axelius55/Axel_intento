@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Perro;
 use Illuminate\Http\Request;
-use Barryvdh\DomPDF\Facade as PDF;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class PerroControllers extends Controller
 {
@@ -74,6 +74,17 @@ class PerroControllers extends Controller
 
     // Redirigir al listado de perros con un mensaje de éxito
     return redirect()->route('perros.index')->with('success', 'Perro eliminado correctamente');
+    }
+    public function generarReportePDF()
+    {
+    // Obtener todos los perros
+    $perros = Perro::all();
+
+    // Cargar la vista de reporte en HTML y pasar los datos de los perros
+    $pdf = Pdf::loadView('perros.report', compact('perros'));
+
+    // Descargar el archivo PDF
+    return $pdf->stream('reporte_perros.pdf');
     }
 
 }
