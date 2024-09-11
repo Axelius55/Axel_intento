@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Perro;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class PerroControllers extends Controller
 {
@@ -74,5 +75,6 @@ class PerroControllers extends Controller
     // Redirigir al listado de perros con un mensaje de éxito
     return redirect()->route('perros.index')->with('success', 'Perro eliminado correctamente');
     }
+
 }
 

@@ -13,3 +13,4 @@ Route::get('/perros/{perro}/edit', [PerroControllers::class, 'edit'])->name('per
 Route::put('/perros/{perro}', [PerroControllers::class, 'update'])->name('perros.update');
 Route::get('/perros/{perro}', [PerroControllers::class, 'show'])->name('perros.show');
 Route::delete('/perros/{perro}', [PerroControllers::class, 'destroy'])->name('perros.destroy');
+Route::get('/perros/reporte', [PerroControllers::class, 'generarReportePDF'])->name('perros.reporte');
