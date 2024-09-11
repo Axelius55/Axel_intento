@@ -36,7 +36,7 @@
                                 <a href="{{ route('perros.edit', ['perro' => $perro->id]) }}" class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Editar</a>
 
                             <!-- Botón "Ver" al lado del botón "Editar" -->
-                            <a {{--href="{{ route('perros.show', ['perro' => $perro->id]) }}"--}} class="ml-2 text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Ver</a>
+                            <a href="{{ route('perros.show', ['perro' => $perro->id]) }}" class="ml-2 text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Ver</a>
                         </td>
                     </tr>
                     @endforeach

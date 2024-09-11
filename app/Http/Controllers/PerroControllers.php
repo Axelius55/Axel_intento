@@ -61,5 +61,18 @@ class PerroControllers extends Controller
     // Redirigir de vuelta al listado con un mensaje de éxito
     return redirect()->route('perros.index')->with('success', 'Perro actualizado con éxito');
     }
+    public function show($id)
+    {
+    $perro = Perro::findOrFail($id);
+    return view('perros.show', compact('perro'));
+    }   
+    public function destroy($id)
+    {
+    $perro = Perro::findOrFail($id);
+    $perro->delete();
+
+    // Redirigir al listado de perros con un mensaje de éxito
+    return redirect()->route('perros.index')->with('success', 'Perro eliminado correctamente');
+    }
 }
 

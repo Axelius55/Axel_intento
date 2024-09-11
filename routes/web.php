@@ -11,3 +11,5 @@ Route::get('/perros/create', [PerroControllers::class, 'create'])->name('perros.
 Route::post('/perros', [PerroControllers::class, 'store'])->name('perros.store');
 Route::get('/perros/{perro}/edit', [PerroControllers::class, 'edit'])->name('perros.edit');
 Route::put('/perros/{perro}', [PerroControllers::class, 'update'])->name('perros.update');
+Route::get('/perros/{perro}', [PerroControllers::class, 'show'])->name('perros.show');
+Route::delete('/perros/{perro}', [PerroControllers::class, 'destroy'])->name('perros.destroy');
